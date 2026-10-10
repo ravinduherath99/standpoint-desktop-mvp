@@ -1,0 +1,51 @@
+# Environment files
+.env
+.env.local
+.env.*
+!.env.example
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyright/
+.tox/
+.nox/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+dist/
+build/
+
+# Caches
+.vite/
+.cache/
+.parcel-cache/
+.turbo/
+.next/
+.eslintcache
+*.tsbuildinfo
+*.log
+
+# Coverage
+coverage/
+
+# Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Vercel
+.vercel/
+
+# macOS
+.DS_Store
