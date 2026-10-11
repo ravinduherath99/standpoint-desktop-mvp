@@ -34,6 +34,12 @@ build/
 *.tsbuildinfo
 *.log
 
+# Temporary helpers
+tmp/
+temp/
+*.tmp
+*.temp
+
 # Coverage
 coverage/
 

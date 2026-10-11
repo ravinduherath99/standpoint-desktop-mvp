@@ -1,4 +1,5 @@
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL
+  || (import.meta.env.PROD ? "/api" : "http://localhost:8000/api");
 
 export const SAFE_MESSAGES = Object.freeze({
   INVALID_CREDENTIALS: "Invalid email or password.",
@@ -48,11 +49,11 @@ export async function apiPost(path, body) {
 }
 
 export async function login(email, password) {
-  return apiPost("/api/auth/login", { email, password });
+  return apiPost("/auth/login", { email, password });
 }
 
 export async function signup(email, password) {
-  return apiPost("/api/auth/signup", { email, password });
+  return apiPost("/auth/signup", { email, password });
 }
 
 export async function apiPostAuth(path, body, token) {
@@ -112,9 +113,9 @@ export async function savePlan(formData, token) {
     accessNotes: formData.accessNotes,
     consent: formData.consent,
   };
-  return apiPostAuth("/api/plans", body, token);
+  return apiPostAuth("/plans", body, token);
 }
 
 export async function fetchPlan(reference, token) {
-  return apiGet(`/api/plans/${reference}`, token);
+  return apiGet(`/plans/${reference}`, token);
 }
